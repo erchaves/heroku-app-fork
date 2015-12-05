@@ -1,9 +1,9 @@
-# example-app
+# heroku-app
 node, express, react, redux, react-router, webpack
 
 ## Usage
-- ```git clone git@ghe.spotify.net:jblake/example-app.git```
-- ```cd ./example-app```
+- ```git clone git@ghe.spotify.net:jblake/heroku-app.git```
+- ```cd ./heroku-app```
 - ```npm install```
 - ```npm run dev``` to start in dev mode
 - ```npm run build``` to build from src
