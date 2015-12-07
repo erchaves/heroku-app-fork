@@ -1,5 +1,8 @@
 {
   "extends": "airbnb",
+  "globals": {
+    "__CLIENT__": false
+  },
   "ecmaFeatures": {
     "restParams": true
   },

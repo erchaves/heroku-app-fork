@@ -1,7 +1,7 @@
 import React from 'react';
 import NavView from '../../views/Nav';
 
-if (process.env.CLIENT) {
+if (__CLIENT__) {
   require('./style.less');
 }
 

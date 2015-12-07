@@ -1,40 +1,46 @@
-var path = require('path');
-var webpack = require('webpack');
+import path from 'path';
+import webpack from 'webpack';
 
-var PATH_SRC = path.resolve(__dirname, '../src');
-var PATH_DIST = path.resolve(__dirname, '../www');
+const srcPath = path.resolve(__dirname, '../src');
+const distPath = path.resolve(__dirname, '../www');
 
-module.exports = {
-  context: PATH_SRC,
+const config = {
+  context: srcPath,
 
   entry: {
-    client: './www/client'
+    client: './www/client',
   },
 
   output: {
-    path: PATH_DIST,
+    path: distPath,
     filename: '[name].js',
-    chunkFilename: '[name].js'
+    chunkFilename: '[name].js',
   },
 
   module: {
     loaders: [{
+      test: /\.js$/,
+      loaders: ['babel'],
+      include: [srcPath],
+    }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader',
-      include: [PATH_SRC]
+      loaders: ['style-loader', 'css-loader'],
+      include: [srcPath],
     }, {
       test: /\.less$/,
-      loader: 'style-loader!css-loader!less-loader',
-      include: [PATH_SRC]
-    }]
+      loaders: ['style-loader', 'css-loader', 'less-loader'],
+      include: [srcPath],
+    }],
   },
 
   plugins: [
     new webpack.DefinePlugin({
+      '__CLIENT__': true,
       'process.env': {
-        'NODE_ENV': '"' + process.env.NODE_ENV + '"',
-        'CLIENT': true
-      }
-    })
-  ]
+        'NODE_ENV': `'${process.env.NODE_ENV}'`,
+      },
+    }),
+  ],
 };
+
+export default config;
