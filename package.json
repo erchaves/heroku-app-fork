@@ -12,7 +12,7 @@
     "dev": "nf start web --env dev.env",
     "lint": "eslint .",
     "test": "echo todo: add tests",
-    "postinstall": "if [ \"$BUILD\" == \"true\" ]; then npm run build; fi"
+    "postinstall": "bash npm-scripts/postinstall.sh"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
