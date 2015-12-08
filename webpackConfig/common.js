@@ -35,9 +35,9 @@ const config = {
 
   plugins: [
     new webpack.DefinePlugin({
-      '__CLIENT__': true,
       'process.env': {
         'NODE_ENV': `'${process.env.NODE_ENV}'`,
+        'CLIENT': true,
       },
     }),
   ],

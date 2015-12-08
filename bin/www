@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 require('babel-core/register');
-
-global.__CLIENT__ = false;
-
 var app = require('../src/app').default;
 var createServer = require('../src/createServer').default;
 var createDevServer = require('../src/createDevServer').default;

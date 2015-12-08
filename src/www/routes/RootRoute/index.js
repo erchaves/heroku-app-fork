@@ -1,6 +1,6 @@
 import RootRouteComponent from './Component';
 
-if (!__CLIENT__) {
+if (!process.env.CLIENT) {
   require.ensure = function (arr, cb) {
     cb(require);
   };
