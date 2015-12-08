@@ -1,9 +1,10 @@
-var configPaths = {
-  production: './prod',
-  development: './dev'
-};
+import prodConfig from './prod';
+import devConfig from './dev';
 
-module.exports = require(
-  configPaths[process.env.NODE_ENV] ||
-  configPaths.development
+const config = (
+  process.env.NODE_ENV === 'production' ?
+  prodConfig :
+  devConfig
 );
+
+export default config;

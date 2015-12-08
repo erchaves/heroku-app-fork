@@ -17,6 +17,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+// todo add htaccess password
 app.use(express.static(staticsPath));
 app.use(routes);
 

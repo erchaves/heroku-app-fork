@@ -1,1 +1,2 @@
-module.exports = require('./webpackConfig');
+require('babel-core/register');
+module.exports = require('./webpackConfig').default;
