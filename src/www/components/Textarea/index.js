@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-if (__CLIENT__) {
+if (process.env.CLIENT) {
   require('./style.less');
 }
 

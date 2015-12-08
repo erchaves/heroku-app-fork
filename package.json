@@ -9,9 +9,10 @@
     "start": "nf start web",
     "clean": "rm -rf www",
     "build": "nf run webpack",
+    "dev": "nf start web --env dev.env",
     "lint": "eslint .",
     "test": "echo todo: add tests",
-    "postinstall": "if [ \"$NODE_ENV\" == \"production\" ]; then npm run build; fi"
+    "postinstall": "if [ \"$BUILD\" == \"true\" ]; then npm run build; fi"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
