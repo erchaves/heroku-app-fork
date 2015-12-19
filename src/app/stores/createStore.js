@@ -3,7 +3,7 @@ import { devTools, persistState } from 'redux-devtools';
 
 let createStore;
 
-if (process.env.CLIENT && process.env.NODE_ENV === 'development') {
+if (typeof window === 'object' && process.env.NODE_ENV === 'development') {
   createStore = compose(
     devTools(),
     persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))

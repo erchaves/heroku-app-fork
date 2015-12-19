@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= title
+    style.
+      .js #app { display: none; }
+    script.
+      document.documentElement.className = 'js';
+  body
+    #app
+      !{body}
+    script(src='/static/vendor.js')
+    script(src='/static/app.js')

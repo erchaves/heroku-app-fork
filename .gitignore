@@ -1,5 +1,7 @@
 node_modules
 .DS_Store
-/www
 npm-debug.log
 *.env
+
+/public
+/server.js
