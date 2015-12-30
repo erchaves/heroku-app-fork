@@ -6,7 +6,6 @@ var server = require('../server').default;
 var PORT = parseInt(process.env.PORT, 10) || 3000;
 
 server.listen(null, function (err) {
-  var compiler;
   var devServer;
 
   if (err) throw err;
@@ -25,10 +24,8 @@ server.listen(null, function (err) {
 
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
-  compiler = webpack(config);
-
-  devServer = new WebpackDevServer(compiler, {
-    publicPath: '/',
+  devServer = new WebpackDevServer(webpack(config), {
+    publicPath: '/static',
     hot: true,
     proxy: {
       '*': 'http://localhost:' + server.address().port,

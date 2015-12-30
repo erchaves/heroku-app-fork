@@ -6,12 +6,13 @@
     "node": "4.2.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "dev": "node scripts/dev.js",
-    "build": "rm -rf public && webpack",
+    "start": "NODE_ENV=production node scripts/start.js",
+    "dev": "NODE_ENV=development node scripts/dev.js",
+    "clean": "rm -rf public server.js",
+    "build": "webpack",
     "lint": "eslint .",
     "test": "echo todo: add tests",
-    "postinstall": "npm run build"
+    "postinstall": "npm run clean && npm run build"
   },
   "dependencies": {
     "body-parser": "~1.13.2",

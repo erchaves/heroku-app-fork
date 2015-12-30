@@ -1,8 +1,12 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var ROOT = path.resolve(__dirname, '..');
+var DIST = path.join(ROOT, 'public');
+var NODE_MODULES = path.join(ROOT, 'node_modules');
+
 var config = {
-  context: path.resolve(__dirname, '..'),
+  context: ROOT,
 
   entry: {
     app: './src/app',
@@ -16,7 +20,7 @@ var config = {
   },
 
   output: {
-    path: './public',
+    path: DIST,
     filename: '[name].js',
     chunkFilename: '[name].js',
   },
@@ -26,10 +30,16 @@ var config = {
       {
         test: /\.js$/,
         loader: 'babel',
-        exclude: [path.resolve(__dirname, '../node_modules')]
+        exclude: [NODE_MODULES],
       },
-      { test: /\.css$/, loader: 'style!css' },
-      { test: /\.less$/, loader: 'style!css!less' },
+      {
+        test: /\.css$/,
+        loader: 'style!css',
+      },
+      {
+        test: /\.less$/,
+        loader: 'style!css!less',
+      },
     ],
   },
 
