@@ -2,7 +2,7 @@
 var WebpackDevServer = require('webpack-dev-server');
 var webpack = require('webpack');
 var config = require('../webpackConfig/app');
-var server = require('../server').default;
+var server = require('../build/server').default;
 var PORT = parseInt(process.env.PORT, 10) || 3000;
 
 server.listen(null, function (err) {

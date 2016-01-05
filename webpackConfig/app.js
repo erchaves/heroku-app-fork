@@ -8,6 +8,8 @@ var NODE_MODULES = path.join(ROOT, 'node_modules');
 var config = {
   context: ROOT,
 
+  devtool: 'source-map',
+
   entry: {
     app: './src/app',
     vendor: [
@@ -52,10 +54,6 @@ var config = {
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
   ]
 };
-
-if (process.env.NODE_ENV === 'development') {
-  config.devtool = 'source-map';
-}
 
 if (process.env.NODE_ENV === 'production') {
   config.plugins.push(new webpack.optimize.UglifyJsPlugin({

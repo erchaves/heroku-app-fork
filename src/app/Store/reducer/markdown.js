@@ -1,4 +1,4 @@
-import { UPDATE_MARKDOWN } from '../../actions/types';
+import { UPDATE_MARKDOWN } from '../../actionTypes';
 
 function markdown(state = '', action) {
   switch (action.type) {

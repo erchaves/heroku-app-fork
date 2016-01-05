@@ -1,4 +1,4 @@
-import { UPDATE_MARKDOWN } from '../types';
+import { UPDATE_MARKDOWN } from '../actionTypes';
 
 function updateMarkdown(markdown) {
   return {

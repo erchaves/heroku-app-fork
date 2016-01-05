@@ -4,9 +4,9 @@ import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { Provider } from 'react-redux';
 import Router from 'react-router';
 import routes from './routes';
-import { createAppStore } from './stores';
+import Store from './Store';
 
-const store = createAppStore();
+const store = Store.create();
 const history = createBrowserHistory();
 const mountNode = document.getElementById('app');
 
@@ -14,7 +14,7 @@ mountNode.style.display = 'block';
 
 ReactDOM.render(
   <Provider store={store} >
-    <Router routes={routes} history={history}/>
+    <Router routes={routes} history={history} />
   </Provider>,
   mountNode
 );

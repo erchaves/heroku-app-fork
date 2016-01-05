@@ -5,6 +5,8 @@ module.exports = {
 
   target: 'node',
 
+  devtool: 'source-map',
+
   entry: './src/server',
 
   output: {

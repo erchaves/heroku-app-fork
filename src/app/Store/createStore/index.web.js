@@ -1,15 +1,13 @@
 import { compose, createStore as _createStore } from 'redux';
 import { devTools, persistState } from 'redux-devtools';
 
-let createStore;
+let createStore = _createStore;
 
-if (typeof window === 'object' && process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
   createStore = compose(
     devTools(),
     persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
-  )(_createStore);
-} else {
-  createStore = _createStore;
+  )(createStore);
 }
 
 export default createStore;
