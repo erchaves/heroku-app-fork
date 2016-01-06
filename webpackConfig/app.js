@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 var ROOT = path.resolve(__dirname, '..');
-var DIST = path.join(ROOT, 'public');
+var DIST = path.join(ROOT, '/build/public');
 var NODE_MODULES = path.join(ROOT, 'node_modules');
 
 var config = {

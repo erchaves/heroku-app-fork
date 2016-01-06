@@ -1,7 +1,10 @@
 var path = require('path');
 
+var ROOT = path.resolve(__dirname, '..');
+var DIST = path.join(ROOT, '/build');
+
 module.exports = {
-  context: path.resolve(__dirname, '..'),
+  context: ROOT,
 
   target: 'node',
 
@@ -10,7 +13,7 @@ module.exports = {
   entry: './src/server',
 
   output: {
-    path: './',
+    path: DIST,
     filename: 'server.js',
     libraryTarget: 'commonjs',
   },
